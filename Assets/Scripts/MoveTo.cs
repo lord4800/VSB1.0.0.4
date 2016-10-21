@@ -17,30 +17,21 @@ public class MoveTo : MonoBehaviour {
 		waypoints =GameObject.Find("WayPoints").transform;
 		NextWaypoint();
 		agent = GetComponent<NavMeshAgent>();
-		//moveTo(isVisible);
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		//waypoint = waypoints.GetChild(index);
-		//if (agent.remainingDistance == 1) 
-		//NextWaypoint();
-		//moveTo(waypoint);
-		/*if(!gethere) moveTo(waypoint);
-		else 
-		{
-			
-			gethere = false;
-		}*/
+		
 		if (isVisible) moveTo(goal);
 		else
 		{
 			if(!gethere) moveTo(waypoint);
 			else 
 			{
-				NextWaypoint();
 				gethere = false;
+				NextWaypoint();
 			}
 
 		}
