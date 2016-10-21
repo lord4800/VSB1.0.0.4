@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ControllerCam.cs" />
      <Compile Include="Assets\Scripts\MoveTo.cs" />
      <Compile Include="Assets\Scripts\Trigger.cs" />
+     <Compile Include="Assets\Scripts\WayPointScr.cs" />
      <Compile Include="Assets\Scripts\detectedScr.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
