@@ -6,7 +6,7 @@ public class MoveTo : MonoBehaviour {
 	private Transform waypoint;
 	private int waypointIndex = -1;
 	public Transform goal;
-	public bool gethere = false;
+	private bool gethere = false;
 	public bool isVisible;
 	public int index;
 	NavMeshAgent agent;
@@ -15,7 +15,7 @@ public class MoveTo : MonoBehaviour {
 	{
 		
 		waypoints =GameObject.Find("WayPoints").transform;
-		NextWaypoint();
+		newWayPoint(-1);
 		agent = GetComponent<NavMeshAgent>();
 
 	}
@@ -23,31 +23,30 @@ public class MoveTo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		//moveTo(goal);
 		if (isVisible) moveTo(goal);
-		else
-		{
-			if(!gethere) moveTo(waypoint);
-			else 
-			{
-				gethere = false;
-				NextWaypoint();
-			}
 
-		}
 	}
 	void moveTo(Transform _goal)
 	{
+		NavMeshAgent agent = GetComponent<NavMeshAgent>();
+		Debug.Log(_goal.position.ToString());
 		agent.destination = _goal.position;
 	}
-	void NextWaypoint()
+	public void newWayPoint(int nextPoint)
 	{
-		waypointIndex++;
-		if (waypointIndex == 4)
+		nextPoint++;
+		if (nextPoint == 4)
 		{
 			waypointIndex = 0;			
 		}
+		else 
+		{
+			waypointIndex = nextPoint;
+		}
 		waypoint = waypoints.GetChild(waypointIndex);
+		Debug.Log("all going good");
+		moveTo(waypoint);
 	}
 
 }
