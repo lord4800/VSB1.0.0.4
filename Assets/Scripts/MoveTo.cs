@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MoveTo : MonoBehaviour {
 	private Transform waypoints;
 	private Transform waypoint;
 	private int waypointIndex = -1;
+	public Transform firstpoint;
 	public Transform goal;
 	private bool gethere = false;
 	public bool isVisible;
 	public int index;
+
+
+	//public Transform[] WayPointList;
 	NavMeshAgent agent;
 	// Use this for initialization
 	void Start () 
 	{
 		
-		waypoints =GameObject.Find("WayPoints").transform;
-		newWayPoint(-1);
+		waypoints = GameObject.Find("WayPoints").transform;
+		//newWayPoint(firstpoint);
+		moveTo(firstpoint);
 		agent = GetComponent<NavMeshAgent>();
 
 	}
@@ -33,8 +39,12 @@ public class MoveTo : MonoBehaviour {
 		Debug.Log(_goal.position.ToString());
 		agent.destination = _goal.position;
 	}
-	public void newWayPoint(int nextPoint)
+	public void newWayPoint(List<Transform> list)
 	{
+		//waypointIndex = Random.Range(0, WayPointList.GetLength);
+		var wpI = Random.Range(0, list.Count); //(0, WayPointList.GetLength);
+		moveTo(list[wpI]);
+		/*
 		nextPoint++;
 		if (nextPoint == 4)
 		{
@@ -44,9 +54,12 @@ public class MoveTo : MonoBehaviour {
 		{
 			waypointIndex = nextPoint;
 		}
+		*/
+		//
+		/*
 		waypoint = waypoints.GetChild(waypointIndex);
 		Debug.Log("all going good");
-		moveTo(waypoint);
+		moveTo(waypoint);*/
 	}
 
 }
