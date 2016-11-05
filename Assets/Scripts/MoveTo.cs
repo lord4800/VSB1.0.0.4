@@ -41,25 +41,9 @@ public class MoveTo : MonoBehaviour {
 	}
 	public void newWayPoint(List<Transform> list)
 	{
-		//waypointIndex = Random.Range(0, WayPointList.GetLength);
-		var wpI = Random.Range(0, list.Count); //(0, WayPointList.GetLength);
-		moveTo(list[wpI]);
-		/*
-		nextPoint++;
-		if (nextPoint == 4)
-		{
-			waypointIndex = 0;			
-		}
-		else 
-		{
-			waypointIndex = nextPoint;
-		}
-		*/
-		//
-		/*
-		waypoint = waypoints.GetChild(waypointIndex);
-		Debug.Log("all going good");
-		moveTo(waypoint);*/
+		waypointIndex = Random.Range(0, list.Count); //(0, WayPointList.GetLength);
+		moveTo(list[waypointIndex]);
+
 	}
 
 }
