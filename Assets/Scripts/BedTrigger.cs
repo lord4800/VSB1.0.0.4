@@ -25,7 +25,11 @@ public class BedTrigger : MonoBehaviour {
 		{
 			_time -= Time.deltaTime;
 		}
-		if(_time <= 0.1f) drink = !drink;
+		if(_time >= 0.1f) 
+		{
+			//drink = false;
+			cooldown.fillAmount = 1f;
+		}
 	}
 	void OnTriggerExit(Collider myTrigger)
 	{
