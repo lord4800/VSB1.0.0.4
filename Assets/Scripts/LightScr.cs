@@ -6,7 +6,10 @@ public class LightScr : MonoBehaviour {
 	private GameObject[] lights;
 	private GameObject light = new GameObject();
 	// Use this for initialization
-
+	void Awake()
+	{
+		setDay();
+	}
 	// Update is called once per frame
 	void Update () 
 	{
