@@ -36,7 +36,7 @@ public class MoveTo : MonoBehaviour {
 	void moveTo(Transform _goal)
 	{
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
-		Debug.Log(_goal.position.ToString());
+		//Debug.Log(_goal.position.ToString());
 		agent.destination = _goal.position;
 	}
 	public void newWayPoint(List<Transform> list)

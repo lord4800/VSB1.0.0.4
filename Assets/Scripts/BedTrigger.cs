@@ -35,7 +35,7 @@ public class BedTrigger : MonoBehaviour {
 	{
 		if (myTrigger.gameObject.name == "ThirdPersonController")
 		{
-			Debug.LogError ("drink blod");
+			Debug.Log ("drink blod");
 			drink = false;
 			drinktimer = 5f;
 			cooldown.fillAmount = 1f;
@@ -45,7 +45,7 @@ public class BedTrigger : MonoBehaviour {
 	{
 		if (myTrigger.gameObject.name == "ThirdPersonController")
 		{
-			Debug.LogError ("drink blod");
+			Debug.Log ("drink blood");
 			drink = true;
 		}
 		//else drink = false;
