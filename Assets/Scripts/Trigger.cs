@@ -10,7 +10,7 @@ public class Trigger : MonoBehaviour
 		{
 			//myTrigger.gameObject.transform.position = new Vector3(3f,0.04f,5.8f);
 			myTrigger.gameObject.transform.position = teleportPosition;
-			Debug.Log ("hit");
+			Debug.Log ("teleport");
 		}
 	}
 		

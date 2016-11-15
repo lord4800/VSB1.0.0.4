@@ -4,7 +4,7 @@ using System.Collections;
 public class LightScr : MonoBehaviour {
 	public bool IsDay;
 	private GameObject[] lights;
-	private GameObject light = new GameObject();
+	private GameObject light;
 	// Use this for initialization
 	void Awake()
 	{

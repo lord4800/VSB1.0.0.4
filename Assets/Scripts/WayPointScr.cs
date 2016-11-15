@@ -16,7 +16,7 @@ public class WayPointScr : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider myTrigger)
 	{
-		if (myTrigger.gameObject.name == "Sphere")
+		if (myTrigger.tag == "Security")
 		{
 			myTrigger.gameObject.GetComponent<MoveTo>().newWayPoint(list);
 		}
