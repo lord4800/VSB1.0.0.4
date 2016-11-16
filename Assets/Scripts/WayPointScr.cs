@@ -20,5 +20,9 @@ public class WayPointScr : MonoBehaviour {
 		{
 			myTrigger.gameObject.GetComponent<MoveTo>().newWayPoint(list);
 		}
+		if (myTrigger.tag == "Citizen")
+		{
+			myTrigger.gameObject.GetComponent<Citizen>().newWayPoint(list);
+		}
 	}
 }

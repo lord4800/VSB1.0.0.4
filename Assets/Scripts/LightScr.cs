@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LightScr : MonoBehaviour {
 	public bool IsDay;
+	private GameObject[] citizens;
 	private GameObject[] lights;
 	private GameObject light;
 	// Use this for initialization
@@ -25,6 +26,7 @@ public class LightScr : MonoBehaviour {
 	void setDay()
 	{
 		IsDay = true;
+		GameObject.FindGameObjectsWithTag("");
 		lights = GameObject.FindGameObjectsWithTag("Light");
 		for(int i = 0; i < lights.Length; i++)
 		{

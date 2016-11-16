@@ -16,7 +16,7 @@ public class Citizen : MonoBehaviour {
 	void Start () 
 	{
 
-		waypoints = GameObject.Find("WayPointsCitizen").transform;
+		waypoints = GameObject.Find("CitizenWayPoints").transform;
 		moveTo(firstpoint);
 		agent = GetComponent<NavMeshAgent>();
 
