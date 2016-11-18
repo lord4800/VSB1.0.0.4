@@ -25,7 +25,12 @@ public class MoveTo : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 
 	}
-	
+
+	public void Visible()
+	{
+		moveTo(goal);
+		isVisible = true;
+	}
 	// Update is called once per frame
 	void Update () 
 	{

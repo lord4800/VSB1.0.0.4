@@ -26,7 +26,7 @@ public class LightScr : MonoBehaviour {
 	void setDay()
 	{
 		IsDay = true;
-		GameObject.FindGameObjectsWithTag("");
+		//GameObject.FindGameObjectsWithTag("");
 		lights = GameObject.FindGameObjectsWithTag("Light");
 		for(int i = 0; i < lights.Length; i++)
 		{

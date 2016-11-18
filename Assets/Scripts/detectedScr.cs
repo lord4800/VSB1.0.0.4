@@ -11,8 +11,6 @@ public class detectedScr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		transform.Rotate(0,1,0);
 		//create forvard vector
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
 		Vector3 vector;
@@ -21,23 +19,31 @@ public class detectedScr : MonoBehaviour {
 			RaycastHit[] hitsh;
 			vector = Quaternion.AngleAxis(h, Vector3.up) * forward;
 			Debug.DrawRay(transform.position, vector, Color.green);
-			hitsh = Physics.RaycastAll(transform.position, vector, 10.0F);//right
-			//Debug.DrawRay(transform.position, forward + new Vector3(h, 0, 0), Color.blue);
-			for (int i = 0; i < hitsh.Length; i++)
-			{
-				RaycastHit hit = hitsh[i];
 
-				Renderer rend = hit.transform.GetComponent<Renderer>();
-				if (rend) 
+			//hitsh = Physics.RaycastAll(transform.position, vector, 10.0F);//right
+			RaycastHit hit;
+			if (Physics.Raycast(transform.position, vector, out hit, 10.0F))
+			{
+				if (hit.transform.tag == "Player")
 				{
-					// Change the material of all hit colliders
-					// to use a transparent shader.
-					rend.material.shader = Shader.Find("Transparent/Diffuse");
-					Color tempColor = rend.material.color;
-					tempColor.a = 0.3F;
-					rend.material.color = tempColor;
+					Debug.LogError("Find HIM!!!!");
+					this.GetComponent<MoveTo>().Visible();
+					this.enabled = false;
 				}
 			}
+
+			//Debug.DrawRay(transform.position, forward + new Vector3(h, 0, 0), Color.blue);
+			/*for (int i = 0; i < hitsh.Length; i++)
+			{
+				RaycastHit hit = hitsh[i];
+				if (hit.transform.tag == "Player")
+				{
+					Debug.LogError("Find HIM!!!!");
+					this.GetComponent<MoveTo>().isVisible = true;
+				}
+
+			}
+			*/
 		}
 		/*for (float h = -10.0f; h< 10.0f;h +=0.1f)
 		{
