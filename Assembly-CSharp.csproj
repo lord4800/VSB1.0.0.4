@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\BedTrigger.cs" />
      <Compile Include="Assets\Scripts\Citizen.cs" />
      <Compile Include="Assets\Scripts\ControllerCam.cs" />
+     <Compile Include="Assets\Scripts\GuardianState.cs" />
      <Compile Include="Assets\Scripts\LightScr.cs" />
      <Compile Include="Assets\Scripts\MoveTo.cs" />
      <Compile Include="Assets\Scripts\Trigger.cs" />
